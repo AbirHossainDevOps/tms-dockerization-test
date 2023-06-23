@@ -1,0 +1,15 @@
+version: '3'
+services:
+  mysql:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: database
+    env_file:
+      - .env
+    restart: always
+    networks:
+      - tms-network
+networks:
+  tms-network:
+
